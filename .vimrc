@@ -30,4 +30,6 @@ set expandtab
 
 " Be smart when using tabs ;)
 set smarttab
-
+set smartindent
+set tabstop=4
+set shiftwidth=4

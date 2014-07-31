@@ -34,5 +34,16 @@ alias ajs='ack --type=js'
 alias acss='ack --type=scss'
 alias ahtml='ack --type=html'
 
+# Edit stuff
+alias aliases='vim ~/.dotfiles/oni_aliases.zsh'
+alias funcs='vim ~/.dotfiles/oni_functions.zsh'
+alias vhost='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
+
+# Tail apache error log
+alias aelog='tail -f /var/log/apache2/error_log'
+
+# Tail apache access log
+alias aalog='tail -f /var/log/apache2/error_log'
+
 #alias lines=`wc -l $f | cut -f1 -d' '`
 #alias words=`wc -w $f | cut -f1 -d' ‘`
