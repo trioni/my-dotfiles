@@ -16,6 +16,9 @@ alias profile='vim ~/.zshrc'
 
 alias bower='noglob bower'
 
+# Verbose user info
+alias user="dscacheutil -q user | grep -A 3 -B 2 -e uid:\ 5'[0-9][0-9]'"
+
 # Get week number
 alias week='date +%V'
 
