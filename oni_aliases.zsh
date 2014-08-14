@@ -34,8 +34,9 @@ alias p="cd ~/Projects"
 
 # Ack
 alias ajs='ack --type=js'
-alias acss='ack --type=scss'
+alias acss='ack --type=sass'
 alias ahtml='ack --type=html'
+alias aphp='ack --type=php'
 
 # Edit stuff
 alias aliases='vim ~/.dotfiles/oni_aliases.zsh'
@@ -47,6 +48,12 @@ alias aelog='tail -f /var/log/apache2/error_log'
 
 # Tail apache access log
 alias aalog='tail -f /var/log/apache2/error_log'
+
+# Projects
+alias skol='cd ~/Projects/SthlmStad/Skolornas/www'
+
+# PHP version
+alias php_switch='sudo mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.bak2 && sudo mv /etc/apache2/httpd.conf.bak /etc/apache2/httpd.conf && sudo mv /etc/apache2/httpd.conf.bak2 /etc/apache2/httpd.conf.bak'
 
 #alias lines=`wc -l $f | cut -f1 -d' '`
 #alias words=`wc -w $f | cut -f1 -d' ‘`
