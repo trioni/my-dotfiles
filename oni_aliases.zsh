@@ -37,6 +37,7 @@ alias ajs='ack --type=js'
 alias acss='ack --type=sass'
 alias ahtml='ack --type=html'
 alias aphp='ack --type=php'
+alias apy='ack --type=py'
 
 # Edit stuff
 alias aliases='vim ~/.dotfiles/oni_aliases.zsh'
