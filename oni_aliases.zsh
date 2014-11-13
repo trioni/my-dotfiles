@@ -55,5 +55,8 @@ alias skol='cd ~/Projects/SthlmStad/Skolornas/www'
 # PHP version
 alias php_switch='sudo mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.bak2 && sudo mv /etc/apache2/httpd.conf.bak /etc/apache2/httpd.conf && sudo mv /etc/apache2/httpd.conf.bak2 /etc/apache2/httpd.conf.bak'
 
+# Copy your public key
+alias public_key='pbcopy < ~/.ssh/id_rsa.pub && echo "Public key copied"'
+
 #alias lines=`wc -l $f | cut -f1 -d' '`
 #alias words=`wc -w $f | cut -f1 -d' ‘`

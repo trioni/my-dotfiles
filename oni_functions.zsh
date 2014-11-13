@@ -40,3 +40,20 @@ function dataurl() {
 # usage: fn foo 
 # to find all files containing 'foo' in the name
 function fn() { ls **/*$1*c }
+
+# Install a npm package and save the exact version number to the package.json under devDependencies
+function npmi() {
+    echo -n "Package to install: "
+    read text
+    echo "Running command: npm install $text --save-dev --save-exact"
+    npm install $text --save-dev --save-exact
+}
+
+function resize() {
+    echo -n "Width: "
+    read w
+    echo -n "Height: "
+    read h
+    sips -Z $w -c $h $w *.jpg
+}
+

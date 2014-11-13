@@ -36,3 +36,9 @@ set smarttab
 set smartindent
 set tabstop=4
 set shiftwidth=4
+
+" Set the font-size to 16
+set guifont=Menlo:h16
+
+" Load plugins
+execute pathogen#infect()
