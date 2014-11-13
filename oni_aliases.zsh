@@ -37,23 +37,22 @@ alias ajs='ack --type=js'
 alias acss='ack --type=sass'
 alias ahtml='ack --type=html'
 alias aphp='ack --type=php'
+alias apy='ack --type=py'
 
 # Edit stuff
 alias aliases='vim ~/.dotfiles/oni_aliases.zsh'
 alias funcs='vim ~/.dotfiles/oni_functions.zsh'
-alias vhost='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
+alias vhosts='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
+alias hosts='sudo vim /etc/hosts'
 
-# Tail apache error log
-alias aelog='tail -f /var/log/apache2/error_log'
+# Apache logs
+alias php_e='cat /var/log/apache2/error_log'
+alias php_et='tail -f /var/log/apache2/error_log'
+alias php_a='cat /var/log/apache2/access_log'
+alias php_at='tail -f /var/log/apache2/access_log'
 
-# Tail apache access log
-alias aalog='tail -f /var/log/apache2/error_log'
-
-# Projects
-alias skol='cd ~/Projects/SthlmStad/Skolornas/www'
-
-# PHP version
-alias php_switch='sudo mv /etc/apache2/httpd.conf /etc/apache2/httpd.conf.bak2 && sudo mv /etc/apache2/httpd.conf.bak /etc/apache2/httpd.conf && sudo mv /etc/apache2/httpd.conf.bak2 /etc/apache2/httpd.conf.bak'
+# PATH variable printed out over several lines
+alias mypath="echo $PATH | tr ':' '\n'"
 
 # Copy your public key
 alias public_key='pbcopy < ~/.ssh/id_rsa.pub && echo "Public key copied"'
