@@ -41,4 +41,4 @@ set shiftwidth=4
 set guifont=Menlo:h16
 
 " Load plugins
-execute pathogen#infect()
+" execute pathogen#infect()
