@@ -78,10 +78,30 @@ function npmi() {
 }
 
 function resize() {
+    FILE=$1
+
     echo -n "Width: "
     read w
     echo -n "Height: "
     read h
-    sips -Z $w -c $h $w *.jpg
+    if [ -s "$FILE" ]; then
+        echo "Resizing SINGLE image: $FILE"
+        if [ $h ]; then
+            echo "Resizing to $w x $h"
+            sips -Z $w -c $h $w $FILE
+        else
+            echo "Resizing width to $w"
+            sips -Z $w $FILE
+        fi
+    else
+        echo "File $FILE does not exist. Targeting all jpg in current folder..."
+        if [ $h ]; then
+            echo "Resizing to $w x $h"
+            sips -Z $w -c $h $w *.jpg
+        else
+            echo "Resizing width to $w"
+            sips -Z $w *.jpg
+        fi
+    fi    
 }
 

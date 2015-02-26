@@ -45,6 +45,10 @@ alias funcs='vim ~/.dotfiles/oni_functions.zsh'
 alias vhosts='sudo vim /etc/apache2/extra/httpd-vhosts.conf'
 alias hosts='sudo vim /etc/hosts'
 
+# Finder stuff
+alias showHidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideHidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Lirbary/CoreServices/Finder.app'
+
 # Apache logs
 alias php_e='cat /var/log/apache2/error_log'
 alias php_et='tail -f /var/log/apache2/error_log'
