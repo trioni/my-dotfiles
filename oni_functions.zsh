@@ -45,6 +45,15 @@ function targz() {
 	echo "${tmpFile}.gz created successfully.";
 }
 
+function untargz() {
+    FILE $1
+    if [ -s "$FILE" ]; then
+        tar -xvzf $FILE
+    else
+        echo "No such file: $FILE"
+    fi
+}
+
 # Use Git's colored diff when available
 hash git &>/dev/null;
 if [ $? -eq 0 ]; then
@@ -103,5 +112,20 @@ function resize() {
             sips -Z $w *.jpg
         fi
     fi    
+}
+
+function wp_adapt_db() {
+    SITE_DOMAIN="pedagogstockholmblogg.se"
+    FROM_DOMAIN=$1
+    TYPE=$2
+
+    if [ $TYPE ] && [ $TYPE = "dry" ]; then
+        wp search-replace $SITE_DOMAIN $FROM_DOMAIN --network --dry-run
+        wp search-replace $SITE_DOMAIN http://$FROM_DOMAIN --network --dry-run
+        echo "Dry-run"
+    else
+        echo "run as usual"
+        wp search-replace $SITE_DOMAIN $FROM_DOMAIN --network
+    fi
 }
 
