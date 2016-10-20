@@ -74,7 +74,7 @@ function dataurl() {
 # Functions
 #
 # (f)ind by (n)ame
-# usage: fn foo 
+# usage: fn foo
 # to find all files containing 'foo' in the name
 function fn() { ls **/*$1*c }
 
@@ -111,7 +111,30 @@ function resize() {
             echo "Resizing width to $w"
             sips -Z $w *.jpg
         fi
-    fi    
+    fi
+}
+
+function resizeToSquare() {
+    FILE=$1
+
+    echo -n "Size: "
+    read w
+		echo -n "Scale width: "
+		read sw
+		FILENAME=$(basename "$FILE" | cut -d. -f1)
+		EXT="${FILE##*.}"
+		DIVIDER=_
+		OUTPUT_FILENAME=$FILENAME$DIVIDER$w.$EXT
+		echo ">> " $OUTPUT_FILENAME
+    if [ -s "$FILE" ]; then
+				W='x'
+				DIMENSION=$w$W$w
+        echo "Resizing SINGLE image: $FILE, to $DIMENSION"
+				convert $FILE -gravity Center -resize $sw -crop $DIMENSION+0+0 +repage $OUTPUT_FILENAME
+    else
+        echo "File $FILE does not exist. Targeting all jpg in current folder..."
+				# convert $FILE -gravity Center -resize $sw -crop $wx$w+0+0 +repage
+    fi
 }
 
 function wp_adapt_db() {
@@ -128,4 +151,3 @@ function wp_adapt_db() {
         wp search-replace $SITE_DOMAIN $FROM_DOMAIN --network
     fi
 }
-

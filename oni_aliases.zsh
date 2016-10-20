@@ -42,6 +42,9 @@ alias apy='ack --type=py'
 alias ajade='ack --type=jade'
 alias aless='ack --type=less'
 
+# Git
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 # Edit stuff
 alias aliases='vim ~/.dotfiles/oni_aliases.zsh'
 alias funcs='vim ~/.dotfiles/oni_functions.zsh'
