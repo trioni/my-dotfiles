@@ -37,6 +37,10 @@ set smartindent
 set tabstop=4
 set shiftwidth=4
 
+" Show invisibles
+set list
+set listchars=tab:»-,trail:·,eol:¬
+
 " Set the font-size to 16
 set guifont=Menlo:h16
 
