@@ -39,3 +39,7 @@ brew cask install quicklook-json
 brew cask install betterzip
 brew cask install qlimagesize
 brew cask install webpquicklook
+brew cask install imageoptim
+
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
